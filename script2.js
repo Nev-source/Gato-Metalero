@@ -27,7 +27,7 @@ backgroundVideo.addEventListener('canplay', function() {
 });
 
 function increaseDifficulty() {
-  if (noteCreationInterval > 200) {
+  if (noteCreationInterval > 250) {
     noteCreationInterval -= 50;
     clearInterval(noteInterval);
     noteInterval = setInterval(createNote, noteCreationInterval);
