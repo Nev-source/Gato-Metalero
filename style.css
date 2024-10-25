@@ -1,0 +1,235 @@
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+body {
+    font-size: 20px;
+    color: #e6e6e6;
+    background-color: #121212;
+    font-family: 'Metal Mania', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0.3em;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#game-container {
+  display: flex;
+  justify-content: space-around;
+  height: 520px;
+  margin-top: 50px;
+  position: relative;
+}
+.note-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.note-line {
+  width: 60px; /* Aumenta a largura */
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para combinar com a temática */
+  position: relative;
+  overflow: hidden;
+  border: 4px solid #8B0000; /* Altera a cor da borda para um vermelho mais escuro */
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.5); /* Adiciona sombra para um efeito mais dramático */
+}
+
+.note {
+  width: 60px;
+  height: 90px; /* Shape of the note */
+  background: linear-gradient(to bottom, #888888, #555555 20%, #2f2f2f 60%, #1a1a1a); /* Dark metallic gradient */
+  border-radius: 6px; /* Slightly sharper corners */
+  position: absolute;
+  top: -100px; /* Adjust positioning */
+  box-shadow: 
+    0px 0px 15px rgba(255, 255, 255, 0.3), /* Highlight on edges */
+    inset 0px 0px 12px rgba(0, 0, 0, 0.8), /* Deep inner shadow for depth */
+    inset 0px 0px 3px rgba(255, 255, 255, 0.2); /* Subtle top shine */
+  overflow: hidden; /* Hide overflow for the blood effect */
+}
+
+.note::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  left: 0;
+  width: 100%;
+  height: 150%; /* Height of the blood effect */
+  background: linear-gradient(to top, rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0) 60%); /* Dark blood effect */
+}
+
+.key-label {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #cc0000;
+  font-weight:900;
+}
+#score {
+  font-size: 30px;
+  margin-top: 20px;
+  color: #cc0000;
+  font-weight: 900;
+}
+.hidden {
+  display: none;
+}
+
+#game-over {
+  margin-top: 30px;
+}
+
+.note-line.flash {
+  animation: flash-red 0.2s ease-in-out;
+}
+@keyframes flash-red {
+  0% {
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+.note-line.flash-white {
+  animation: flash-white 0.2s ease-in-out;
+}
+@keyframes flash-white {
+  0% {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+.fire-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.fire-flame {
+  position: absolute;
+  bottom: 0;
+  left: 0%; 
+  width: 100%; 
+  height: 60%;
+  background: radial-gradient(ellipse at bottom, rgba(255,165,0,1) 20%, rgba(255,69,0,1) 50%, rgba(255,0,0,0) 80%);
+  border-radius: 50% 50% 0 0;
+  opacity: 0.8;
+  transform-origin: bottom center;
+  animation: flame-animation 0.4s ease-out forwards;
+}
+
+@keyframes flame-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5); 
+    opacity: 0;
+  }
+}
+
+h1 {
+    word-spacing: 20px;
+    font-size: 90px;
+    color: #cc0000;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 70px;
+    padding-top: 1px;
+    margin-top: 40px;
+}
+h2 {
+    word-spacing: 7px;
+    font-size: 35px;
+    color: #cc0000;
+    font-style: normal;
+    font-weight: 900;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+p {
+    font-size: 20px;
+    word-spacing: normal;
+}
+strong {
+    color: #cc0000;
+    font-size: 23px;
+}
+h3 {
+    color: #cc0000;
+    text-transform: uppercase;
+    font-size: 45px;
+    text-decoration: none;
+    font-weight: 900;
+    position: relative;
+    bottom: 65px;
+    right: 50px;
+    margin-bottom: -30px;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+h4 {
+    color: #cc0000;
+    text-transform: uppercase;
+    font-size: 45px;
+    text-decoration: none;
+    font-weight: 900;
+    position: relative;
+    bottom: 40px;
+    left: 50px;
+    margin-bottom: -30px;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+a {
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    color:#cc0000;
+}
+a:hover {
+    transform: scale(1.15);
+}
+button {
+    font-family: 'Metal Mania', sans-serif;
+    color: #cc0000;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: 900;
+    background-color: transparent;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.15);
+}
+em {
+    font-style: normal;
+    color: white;
+    font-weight: 700;
+}
